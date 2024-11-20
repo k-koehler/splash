@@ -1,0 +1,5 @@
+/* make it so body has no margin or padding */
+body {
+  margin: 0;
+  padding: 0;
+}

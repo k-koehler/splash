@@ -1,0 +1,15 @@
+{
+  "name": "splash",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "DEV=true electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-reloader": "^1.2.3"
+  }
+}

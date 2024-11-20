@@ -1,0 +1,15 @@
+/* widget class */
+.widget {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.widget p {
+  margin: 0;
+}
