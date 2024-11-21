@@ -14,12 +14,11 @@ const mainTheme = new Theme({
 let theme = mainTheme;
 
 window.addEventListener("DOMContentLoaded", () => {
-  const bg = document.getElementById("bg");
   const video = document.createElement("video");
   video.src = theme.backgroundVideoSrc;
   video.autoplay = true;
   video.loop = true;
   video.muted = true;
   video.classList.add("theme-video-bg");
-  bg.appendChild(video);
+  document.body.appendChild(video);
 });

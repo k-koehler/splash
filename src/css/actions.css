@@ -1,0 +1,44 @@
+.actions {
+  position: absolute;
+  bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0 10%;
+  width: -webkit-fill-available;
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  width: 75px;
+  height: 75px;
+  border-radius: 10px;
+  cursor: pointer;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.action-selected {
+  display: flex;
+  align-items: center;
+  width: 75px;
+  height: 75px;
+  border-radius: 10px;
+  cursor: pointer;
+  justify-content: center;
+
+  border: 2px solid rebeccapurple;
+  background-color: black;
+}
+
+.action img {
+  width: 50px;
+  height: 50px;
+}
+
+.action-selected img {
+  width: 50px;
+  height: 50px;
+}
