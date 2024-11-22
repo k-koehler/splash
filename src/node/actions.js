@@ -9,14 +9,8 @@ async function openApp(id) {
   const idMap = {
     firefox: {
       openid: open.apps.firefox,
-      // fullscreen
       arguments: ["--kiosk"],
     },
-    steam: platformSelect({
-      win32: "steam://open/bigpicture",
-      darwin: "steam://open/bigpicture",
-      linux: "steam",
-    }),
   };
   const app = idMap[id];
   if (app) {
