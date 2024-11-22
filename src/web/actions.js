@@ -54,10 +54,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
+  const onSelect = (index) => {
+    window.actionsApi.openApp(actions[index].id);
+  };
+
   onChangeSelected(selected);
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "ArrowRight") {
+    if (event.key === "Enter") {
+      onSelect(selected);
+    } else if (event.key === "ArrowRight") {
       selected = Math.min(selected + 1, actions.length - 1);
       onChangeSelected(selected);
     } else if (event.key === "ArrowLeft") {
@@ -75,8 +81,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let shouldUpdate = false;
     let direction = 0;
-
-    if (gamepad.buttons[14].pressed) {
+    if (gamepad.buttons[0].pressed) {
+      onSelect(selected);
+      lastGamepadUpdate = now;
+    } else if (gamepad.buttons[14].pressed) {
       direction = -1;
       shouldUpdate = true;
     } else if (gamepad.buttons[15].pressed) {
@@ -108,7 +116,6 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   window.addEventListener("gamepadconnected", (e) => {
-    console.log("Gamepad connected:", e.gamepad.id);
     pollGamepad();
   });
 
@@ -117,6 +124,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (actionElement) {
       selected = Array.from(actionsElement.children).indexOf(actionElement);
       onChangeSelected(selected);
+    }
+  });
+
+  actionsElement.addEventListener("click", (event) => {
+    const actionElement = event.target.closest(".action");
+    if (actionElement) {
+      selected = Array.from(actionsElement.children).indexOf(actionElement);
+      onSelect(selected);
     }
   });
 });

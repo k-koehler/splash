@@ -1,4 +1,3 @@
-const moment = require("moment");
 const os = require("os");
 const si = require("systeminformation");
 const bytes = require("bytes");
